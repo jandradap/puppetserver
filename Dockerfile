@@ -1,4 +1,4 @@
-FROM puppet/puppetserver:2.6.0
+FROM puppet/puppetserver:2.7.2
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -18,7 +18,5 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 RUN apt-get update \
   && apt-get install --no-install-recommends -fy puppet-agent \
 	&& gem install hiera-eyaml \
-	&& puppetserver gem install hiera-eyaml \
-	&& puppetserver gem install msgpack \
 	&& gem cleanup all \
 	&& rm -rf /var/lib/apt/lists/*
