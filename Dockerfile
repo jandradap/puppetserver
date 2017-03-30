@@ -1,4 +1,4 @@
-FROM puppet/puppetserver
+FROM puppet/puppetserver:2.6.0
 
 ARG BUILD_DATE
 ARG VCS_REF
